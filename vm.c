@@ -6,9 +6,9 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "stack.h"
+#include "include/stack.h"
 #include "instructions/instructions.h"
-#include "filectl.h"
+#include "include/filectl.h"
 
 //instruction type functions
 void init_ins(instruction *instructions)

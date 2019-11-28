@@ -9,8 +9,8 @@
 #include <sys/stat.h>
 #include <unistd.h>
 
-#include "../stack.h"
-#include "../filectl.h"
+#include "../include/stack.h"
+#include "../include/filectl.h"
 
 typedef uint8_t* (*instruction)(uint8_t*, STACK *);
 #define NUM_INS 256

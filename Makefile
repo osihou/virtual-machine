@@ -1,8 +1,8 @@
 CC = gcc
 CFLAGS= -c -Wall
 TARGET= vm
-HEADERS= stack.h instructions/instructions.h filectl.h
-OBJECTS= $(TARGET).o stack.o instructions/instructions.o filectl.o
+HEADERS= include/stack.h instructions/instructions.h include/filectl.h
+OBJECTS= $(TARGET).o include/stack.o instructions/instructions.o include/filectl.o
 
 $(TARGET): $(OBJECTS)
 	@echo compiling project
@@ -14,7 +14,7 @@ $(TARGET).o: $(TARGET).c $(HEADERS)
 	
 stack.o: stack.c stack.h
 	@echo creating stack objcet
-	$(CC) $(CFLAGS) stack.c
+	$(CC) $(CFLAGS) include/stack.c
 
 instructions.o: instructions/instructions.c $(HEADERS)
 	@echo creating instructins object
@@ -22,7 +22,7 @@ instructions.o: instructions/instructions.c $(HEADERS)
 
 filectl.o: filectl.c filectl.h
 	@echo creating filectl object
-	$(CC) $(CFLAGS) filectl.c
+	$(CC) $(CFLAGS) include/filectl.c
 
 .PHONY: clean
 
