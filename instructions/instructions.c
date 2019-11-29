@@ -54,15 +54,7 @@ uint8_t *ins_push_int(uint8_t *ip, STACK *s)
 	return ip-2;
 }
 
-uint8_t *ins_add(uint8_t *ip, STACK *s)
-//add two numbers from the stack
-{
-	INSTANCE i;
-	i.type = 1;
-	i.i8 = stack_pop(s).i8 + stack_pop(s).i8;
-	stack_push(s,i);
-	return ip-1;
-}
+
 
 uint8_t *ins_read_file(uint8_t *ip, STACK *s)
 //read & eval file
@@ -97,23 +89,14 @@ uint8_t *ins_je(uint8_t *ip, STACK *s)
 //jump if equals
 {
 	INSTANCE i;
-	if(( i = stack_pop(s)).i8 == 0)
-		return stack_pop(s).iptr;
+	if(( i = stack_peek(s)).i8 == 0)
+		return stack_pop(s).iptr-1;
 
 	else return ip - 1;
 
 }
 
-uint8_t *ins_sub(uint8_t *ip, STACK *s)
-{
-	INSTANCE i;
-	i.type = 1;
-	i.i8 = stack_pop(s).i8 - stack_pop(s).i8;
 
-	stack_push(s, i);
-	return ip-1;
-
-}
 
 uint8_t *ins_return(uint8_t *ip, STACK *s)
 //return back to parent
