@@ -2,8 +2,8 @@
 This is a basic stack machine implementation.
 
 ## Features 
-For now it doesn't do anything extraordinary. It can do basic addition and substraciton.
-It can echo words and open another file that it tries to execute.
+For now it doesn't do anything extraordinary. It can do basic addition and subtraciton.
+It can echo words and open another file and try to execute it.
 
 ## Usage
 
